@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Auth\Login;
+use App\Livewire\Brokers;
 use App\Livewire\Profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
     
     Route::get('/profile', Profile::class)->name('profile');
+    Route::get('/brokers', Brokers::class)->name('brokers');
     
     Route::post('/logout', function () {
         Auth::logout();
