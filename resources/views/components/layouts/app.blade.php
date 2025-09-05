@@ -41,7 +41,7 @@
                     <!-- User Account Dropdown -->
                     <div class="flex items-center space-x-4">
                         <div class="relative" x-data="{ open: false }">
-                            <button @click="open = !open" class="flex items-center space-x-2 text-gray-700 hover:text-gray-900 focus:outline-none">
+                            <button @click="open = !open" class="flex items-center space-x-2 text-gray-700 hover:text-gray-900 focus:outline-none cursor-pointer">
                                 <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
                                     @if(auth()->user()->profile_image)
                                         <img src="{{ asset('storage/' . auth()->user()->profile_image) }}" alt="Profile" class="w-8 h-8 rounded-full object-cover">
@@ -58,7 +58,7 @@
                             </button>
 
                             <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                                <a href="{{ route('profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="{{ route('profile') }}" wire:navigate class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Log out</button>
