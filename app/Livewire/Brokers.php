@@ -101,6 +101,11 @@ class Brokers extends Component
         $this->showDeleteModal = false;
         $this->selectedBrokerId = null;
     }
+
+    public function getSelectedBrokerProperty()
+    {
+        return $this->selectedBrokerId ? Broker::find($this->selectedBrokerId) : null;
+    }
     
     public function render()
     {
