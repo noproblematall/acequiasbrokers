@@ -2,6 +2,8 @@
 
 use App\Livewire\Auth\Login;
 use App\Livewire\Brokers;
+use App\Livewire\BrokerDetail;
+use App\Livewire\BrokerPublic;
 use App\Livewire\Profile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +20,7 @@ Route::middleware('auth')->group(function () {
     
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/brokers', Brokers::class)->name('brokers');
+    Route::get('/brokers/{broker}', BrokerDetail::class)->name('broker.detail');
     
     Route::post('/logout', function () {
         Auth::logout();
@@ -26,3 +29,6 @@ Route::middleware('auth')->group(function () {
         return redirect('/');
     })->name('logout');
 });
+
+// Public routes (no authentication required)
+Route::get('/{url}', BrokerPublic::class)->name('broker.public');
