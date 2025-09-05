@@ -73,7 +73,7 @@
                         <!-- Remove button for uploaded image -->
                         @if(auth()->user()->profile_image)
                             <div x-data="{ showRemoveModal: false }" @keydown.escape.window="showRemoveModal = false">
-                                <button @click="showRemoveModal = true" class="absolute -top-1 -left-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors" title="Remove profile image">
+                                <button @click="showRemoveModal = true" class="absolute -top-1 -left-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 focus:outline-none cursor-pointer transition-colors" title="Remove profile image">
                                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
@@ -99,10 +99,10 @@
                                         </div>
                                         
                                         <div class="px-6 py-4 bg-gray-50 flex justify-end space-x-3 rounded-b-lg">
-                                            <button @click="showRemoveModal = false" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+                                            <button @click="showRemoveModal = false" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none cursor-pointer transition-colors">
                                                 Cancel
                                             </button>
-                                            <button @click="showRemoveModal = false; $wire.removeProfileImage()" class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors">
+                                            <button @click="showRemoveModal = false; $wire.removeProfileImage()" class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none cursor-pointer transition-colors">
                                                 Remove Image
                                             </button>
                                         </div>
@@ -240,7 +240,7 @@
                                     </svg>
                                     <span x-text="validationError"></span>
                                 </p>
-                                <button @click="validationError = ''" class="ml-2 p-1 rounded-full hover:bg-red-100 text-red-500 hover:text-red-600 transition-colors" title="Dismiss">
+                                <button @click="validationError = ''" class="ml-2 p-1 rounded-full hover:bg-red-100 text-red-500 hover:text-red-600 focus:outline-none cursor-pointer transition-colors" title="Dismiss">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
@@ -264,7 +264,7 @@
                                         <p class="text-xs text-green-600 mt-1" x-text="selectedFile ? 'Size: ' + (selectedFile.size / 1024).toFixed(1) + ' KB' : ''"></p>
                                     </div>
                                 </div>
-                                <button x-show="uploadCompleted" @click="clearSelectedFile()" class="ml-2 p-1 rounded-full hover:bg-green-100 text-green-600 hover:text-green-800 transition-colors" title="Remove uploaded file">
+                                <button x-show="uploadCompleted" @click="clearSelectedFile()" class="ml-2 p-1 rounded-full hover:bg-green-100 text-green-600 hover:text-green-800 focus:outline-none cursor-pointer transition-colors" title="Remove uploaded file">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
@@ -324,7 +324,7 @@
 
             <!-- Submit Button -->
             <div class="flex justify-end">
-                <button wire:click="updateUserInfo" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updateUserInfo">
+                <button wire:click="updateUserInfo" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none cursor-pointer transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updateUserInfo">
                     <div wire:loading.remove wire:target="updateUserInfo">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -399,7 +399,7 @@
 
             <!-- Submit Button -->
             <div class="flex justify-end">
-                <button wire:click="updateEmail" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updateEmail">
+                <button wire:click="updateEmail" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 focus:outline-none cursor-pointer transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updateEmail">
                     <div wire:loading.remove wire:target="updateEmail">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -530,7 +530,7 @@
 
             <!-- Submit Button -->
             <div class="flex justify-end">
-                <button wire:click="updatePassword" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updatePassword">
+                <button wire:click="updatePassword" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 focus:outline-none cursor-pointer transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed" wire:loading.attr="disabled" wire:target="updatePassword">
                     <div wire:loading.remove wire:target="updatePassword">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
