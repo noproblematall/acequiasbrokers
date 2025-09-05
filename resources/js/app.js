@@ -2,4 +2,6 @@ import './bootstrap';
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
-Alpine.start();
+
+// Let Livewire start Alpine instead of starting it here
+// Alpine.start();

@@ -14,13 +14,13 @@ class Profile extends Component
     use WithFileUploads;
 
     #[Validate('required|string|max:255')]
-    public string $first_name;
+    public string $first_name = '';
 
     #[Validate('required|string|max:255')]
-    public string $last_name;
+    public string $last_name = '';
 
     #[Validate('required|email|unique:users,email')]
-    public string $email;
+    public string $email = '';
 
     #[Validate('nullable|image|max:2048')]
     public $profile_image;
@@ -33,6 +33,37 @@ class Profile extends Component
 
     #[Validate('nullable')]
     public string $current_password = '';
+
+    public function clearProfileImage()
+    {
+        $this->profile_image = null;
+    }
+
+    public function removeProfileImage()
+    {
+        $user = Auth::user();
+        
+        if ($user->profile_image) {
+            // Delete the file from storage
+            Storage::disk('public')->delete($user->profile_image);
+            
+            // Update user record
+            $user->update(['profile_image' => null]);
+            
+            session()->flash('message', 'Profile image removed successfully!');
+        }
+    }
+
+    public function updatedProfileImage()
+    {
+        // This runs when profile_image is updated
+        if ($this->profile_image) {
+            // Additional server-side validation
+            $this->validate([
+                'profile_image' => 'image|mimes:jpeg,jpg,png,gif|max:2048'
+            ]);
+        }
+    }
 
     public function mount()
     {
@@ -53,16 +84,19 @@ class Profile extends Component
         ];
     }
 
-    public function updateProfile()
+    public function updateUserInfo()
     {
-        $this->validate();
+        $this->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'profile_image' => 'nullable|image|max:2048',
+        ]);
 
         $user = Auth::user();
         
         $updateData = [
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
-            'email' => $this->email,
         ];
 
         if ($this->profile_image) {
@@ -71,35 +105,53 @@ class Profile extends Component
                 Storage::disk('public')->delete($user->profile_image);
             }
             
-            // Store new image
-            $imagePath = $this->profile_image->store('profile-images', 'public');
+            // Store new image in user-specific directory
+            $userDirectory = 'uploads/users/' . $user->id;
+            $filename = 'profile_image_' . time() . '.' . $this->profile_image->getClientOriginalExtension();
+            $imagePath = $this->profile_image->storeAs($userDirectory, $filename, 'public');
             $updateData['profile_image'] = $imagePath;
-        }
-
-        // Handle password update
-        if ($this->password) {
-            // Verify current password if trying to change password
-            if (!$this->current_password) {
-                $this->addError('current_password', 'Current password is required to change password.');
-                return;
-            }
-            
-            if (!Hash::check($this->current_password, $user->password)) {
-                $this->addError('current_password', 'The current password is incorrect.');
-                return;
-            }
-            
-            $updateData['password'] = Hash::make($this->password);
         }
 
         $user->update($updateData);
 
+        $this->profile_image = null;
+
+        session()->flash('message', 'Personal information updated successfully!');
+    }
+
+    public function updateEmail()
+    {
+        $this->validate([
+            'email' => 'required|email|unique:users,email,' . Auth::id(),
+        ]);
+
+        $user = Auth::user();
+        $user->update(['email' => $this->email]);
+
+        session()->flash('message', 'Email address updated successfully!');
+    }
+
+    public function updatePassword()
+    {
+        $this->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        if (!Hash::check($this->current_password, $user->password)) {
+            $this->addError('current_password', 'The current password is incorrect.');
+            return;
+        }
+
+        $user->update(['password' => Hash::make($this->password)]);
+
         $this->current_password = '';
         $this->password = '';
         $this->password_confirmation = '';
-        $this->profile_image = null;
 
-        session()->flash('message', 'Profile updated successfully!');
+        session()->flash('message', 'Password updated successfully!');
     }
 
     public function render()

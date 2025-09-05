@@ -13,6 +13,11 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+    
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body class="font-sans antialiased bg-gray-50">
     <div class="h-screen flex flex-col" x-data="{ sidebarOpen: false }">
@@ -107,5 +112,19 @@
             </div>
         </div>
     </div>
+    @livewireScripts
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM loaded');
+            console.log('Livewire available:', typeof Livewire !== 'undefined');
+            console.log('Alpine available:', typeof Alpine !== 'undefined');
+            
+            if (typeof Livewire !== 'undefined') {
+                Livewire.on('echo', (message) => {
+                    console.log('Livewire echo:', message);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
