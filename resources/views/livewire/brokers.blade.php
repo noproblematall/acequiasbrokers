@@ -23,16 +23,23 @@
     </div>
 
     @if (session()->has('message'))
-        <div class="bg-green-50 border-l-4 border-green-400 rounded-lg p-4 shadow-sm">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <svg class="h-5 w-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        <div x-data="{ show: true }" x-show="show" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="bg-green-50 border-l-4 border-green-400 rounded-lg p-4 shadow-sm">
+            <div class="flex items-center justify-between">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-green-700 font-medium">{{ session('message') }}</p>
+                    </div>
+                </div>
+                <button @click="show = false" class="ml-4 text-green-600 hover:text-green-800 focus:outline-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
-                </div>
-                <div class="ml-3">
-                    <p class="text-green-700 font-medium">{{ session('message') }}</p>
-                </div>
+                </button>
             </div>
         </div>
     @endif
