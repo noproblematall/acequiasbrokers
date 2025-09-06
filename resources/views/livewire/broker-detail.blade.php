@@ -12,12 +12,12 @@
                         <p class="text-gray-600">Broker Details</p>
                         <span class="text-gray-300">•</span>
                         <a href="/{{ $broker->url }}" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-                            View
+                            View public page
                         </a>
                     </div>
                 </div>
             </div>
-            <a href="{{ route('brokers') }}" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none cursor-pointer transition-colors">
+            <a href="{{ route('brokers') }}" wire:navigate class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none cursor-pointer transition-colors">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>

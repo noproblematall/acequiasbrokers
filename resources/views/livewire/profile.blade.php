@@ -1,6 +1,6 @@
-<div class="max-w-5xl mx-auto space-y-8">
+<div class="max-w-7xl mx-auto space-y-8">
     <!-- Page Header -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
         <div class="flex items-center space-x-4">
             <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@
 
     <!-- User Information Section -->
     <div class="bg-white rounded-xl shadow-sm border border-gray-100">
-        <div class="px-8 py-6 border-b border-gray-100">
+        <div class="px-4 py-4 border-b border-gray-100">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
                     <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@
 
     <!-- Email Update Section -->
     <div class="bg-white rounded-xl shadow-sm border border-gray-100">
-        <div class="px-8 py-6 border-b border-gray-100">
+        <div class="px-4 py-4 border-b border-gray-100">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                     <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -420,7 +420,7 @@
 
     <!-- Password Update Section -->
     <div class="bg-white rounded-xl shadow-sm border border-gray-100">
-        <div class="px-8 py-6 border-b border-gray-100">
+        <div class="px-4 py-4 border-b border-gray-100">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
                     <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

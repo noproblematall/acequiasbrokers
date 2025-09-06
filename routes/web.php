@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Auth\Login;
+use App\Livewire\BaseModel;
 use App\Livewire\Brokers;
 use App\Livewire\BrokerDetail;
 use App\Livewire\BrokerPublic;
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/brokers', Brokers::class)->name('brokers');
     Route::get('/brokers/{broker}', BrokerDetail::class)->name('broker.detail');
+    Route::get('/base-model', BaseModel::class)->name('base-model');
     
     Route::post('/logout', function () {
         Auth::logout();
