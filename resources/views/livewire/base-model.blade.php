@@ -13,4 +13,49 @@
             </div>
         </div>
     </div>
+
+    @if (session()->has('message'))
+    <div class="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+        {{ session('message') }}
+    </div>
+    @endif
+
+    <div class="bg-white rounded-xl shadow-sm border-b border-gray-100">
+        <div class="p-4 space-y-4">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Landing level</h2>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">
+                    Background Color
+                </label>
+                <div class="flex items-center space-x-4">
+                    <div class="relative group">
+                        <div class="w-12 h-12 rounded-lg border-2 border-gray-400 shadow-lg overflow-hidden cursor-pointer hover:border-gray-500 transition-all duration-200 hover:shadow-md" 
+                             style="background-color: {{ $landing_bg_color }};">
+                            <input
+                                type="color"
+                                wire:model.live="landing_bg_color"
+                                class="opacity-0 w-full h-full cursor-pointer"
+                                title="Select background color">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Selected Color: <span class="text-sm text-gray-500">{{ $landing_bg_color }}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-6 py-4 bg-gray-50 rounded-b-xl border-t border-gray-200">
+            <button
+                type="button"
+                wire:click="updateBaseModel"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 cursor-pointer">
+                Update
+            </button>
+        </div>
+    </div>
 </div>
