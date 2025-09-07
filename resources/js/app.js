@@ -1,7 +1,8 @@
 import './bootstrap';
-import Alpine from 'alpinejs';
 
-window.Alpine = Alpine;
-
-// Let Livewire start Alpine instead of starting it here
-// Alpine.start();
+// Global toast function
+window.toast = (message, type = 'success') => {
+    window.dispatchEvent(new CustomEvent('toast', {
+        detail: { message, type }
+    }));
+};

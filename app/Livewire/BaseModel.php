@@ -81,7 +81,7 @@ class BaseModel extends Component
     {
         BaseModelModel::setOptionValue('landing_bg_color', $this->landing_bg_color);
         
-        session()->flash('success', 'Landing level settings updated successfully!');
+        $this->js('window.toast("Landing level settings updated successfully!", "success")');
     }
 
     public function updateSection1()
@@ -111,7 +111,7 @@ class BaseModel extends Component
         BaseModelModel::setOptionValue('section_1_button_1_text_alignment', $this->section_1_button_1_text_alignment);
         BaseModelModel::setOptionValue('section_1_button_1_icon_link', $this->section_1_button_1_icon_link);
         
-        session()->flash('success', 'Section 1 settings updated successfully!');
+        $this->js('window.toast("Section 1 settings updated successfully!", "success")');
     }
 
     public function render()

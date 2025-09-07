@@ -119,8 +119,80 @@
             </div>
         </div>
     </div>
-    @livewireScripts
     
+    <!-- Toast Container -->
+    <div x-data="{
+        toasts: [],
+        show(message, type = 'success', duration = 4000) {
+            const id = Date.now();
+            const toast = { id, message, type, visible: true };
+            this.toasts.push(toast);
+            
+            setTimeout(() => {
+                this.remove(id);
+            }, duration);
+        },
+        
+        remove(id) {
+            const toast = this.toasts.find(t => t.id === id);
+            if (toast) {
+                toast.visible = false;
+                setTimeout(() => {
+                    this.toasts = this.toasts.filter(t => t.id !== id);
+                }, 300);
+            }
+        }
+    }" @toast.window="show($event.detail.message, $event.detail.type)" 
+         class="fixed top-4 right-4 z-50 space-y-3 w-80">
+        <template x-for="toast in toasts" :key="toast.id">
+            <div x-show="toast.visible" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform translate-y-2"
+                 x-transition:enter-end="opacity-100 transform translate-y-0"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="border border-gray-200 border-l-4 rounded-lg shadow-xl p-4 w-full ring-1 ring-black ring-opacity-5"
+                 :class="{
+                     'bg-green-50 border-l-green-500 border-green-200': toast.type === 'success',
+                     'bg-red-50 border-l-red-500 border-red-200': toast.type === 'error',
+                     'bg-blue-50 border-l-blue-500 border-blue-200': toast.type === 'info'
+                 }">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <!-- Success Icon -->
+                        <template x-if="toast.type === 'success'">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-100 border border-green-200 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-green-700" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </template>
+                        
+                        <!-- Error Icon -->
+                        <template x-if="toast.type === 'error'">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-100 border border-red-200 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </template>
+                        
+                        <!-- Message -->
+                        <p class="text-sm font-medium text-gray-900 flex-1" x-text="toast.message"></p>
+                    </div>
+                    
+                    <!-- Close Button -->
+                    <button @click="remove(toast.id)" class="flex-shrink-0 ml-4 p-1 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </template>
+    </div>
+    @livewireScripts
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             console.log('DOM loaded');
