@@ -14,7 +14,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    
+        
     <style>
         [x-cloak] { display: none !important; }
     </style>
@@ -120,6 +120,7 @@
         </div>
     </div>
     @livewireScripts
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             console.log('DOM loaded');
