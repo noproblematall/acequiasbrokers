@@ -1,3 +1,6 @@
+@php
+    $landingBgColor = \App\Models\BaseModel::getOptionValue('landing_bg_color', '#f9f9f9');
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -14,9 +17,11 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="">
-    <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8">
-        {{ $slot }}
+<body>
+    <div class="min-h-screen px-4">
+        <div class="w-full max-w-md shadow-lg mx-auto" style="background-color: {{ $landingBgColor }};">
+            {{ $slot }}
+        </div>
     </div>
 </body>
 </html>
