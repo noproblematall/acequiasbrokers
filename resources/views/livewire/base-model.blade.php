@@ -52,6 +52,7 @@
             </button>
         </div>
 
+        <!-- New Section 1 -->
         <div class="p-4 space-y-4 border-b border-gray-300">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-semibold text-gray-900">Section 1</h2>
@@ -59,6 +60,37 @@
                     <input type="checkbox" wire:model="section_1_is_disabled" class="rounded border-gray-300 text-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent">
                     <span class="ml-2 text-sm text-gray-600">Disable Section</span>
                 </label>
+            </div>
+            
+            <!-- Logo Settings -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <!-- Logo Link -->
+                <div class="lg:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-3">
+                        Logo Link
+                    </label>
+                    <input
+                        type="url"
+                        wire:model="section_1_logo_link"
+                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        placeholder="https://example.com/logo.png"
+                        title="Enter logo URL">
+                </div>
+
+                <!-- Logo Width -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">
+                        Logo Width (%)
+                    </label>
+                    <input
+                        type="number"
+                        wire:model="section_1_logo_width"
+                        min="10"
+                        max="100"
+                        step="1"
+                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
+                        title="Enter logo width as percentage">
+                </div>
             </div>
 
             <!-- Background Color -->
@@ -78,8 +110,49 @@
                         </div>
                     </div>
                     <div class="flex-1">
-                        <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
+                        <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
                             <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_bg_color }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                wire:click="updateSection1"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer">
+                Update Section 1
+            </button>
+        </div>
+
+        <div class="p-4 space-y-4 border-b border-gray-300">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-900">Section 2</h2>
+                <label class="inline-flex items-center">
+                    <input type="checkbox" wire:model="section_2_is_disabled" class="rounded border-gray-300 text-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent">
+                    <span class="ml-2 text-sm text-gray-600">Disable Section</span>
+                </label>
+            </div>
+
+            <!-- Background Color -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">
+                    Background Color
+                </label>
+                <div class="flex items-center space-x-4">
+                    <div class="relative group">
+                        <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
+                            style="background-color: {{ $section_2_bg_color }};">
+                            <input
+                                type="color"
+                                wire:model="section_2_bg_color"
+                                class="opacity-0 w-full h-full cursor-pointer"
+                                title="Select background color">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 rounded-lg p-2 border border-gray-200">
+                            <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_bg_color }}</span></p>
                         </div>
                     </div>
                 </div>
@@ -96,17 +169,17 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative group">
                             <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                                style="background-color: {{ $section_1_line_1_font_color }};">
+                                style="background-color: {{ $section_2_line_1_font_color }};">
                                 <input
                                     type="color"
-                                    wire:model="section_1_line_1_font_color"
+                                    wire:model="section_2_line_1_font_color"
                                     class="opacity-0 w-full h-full cursor-pointer"
                                     title="Select text color">
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
-                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_line_1_font_color }}</span></p>
+                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_line_1_font_color }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +190,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Family
                     </label>
-                    <select wire:model="section_1_line_1_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_1_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontFamilies as $font)
                         <option value="{{ $font }}">{{ $font }}</option>
                         @endforeach
@@ -129,7 +202,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Weight
                     </label>
-                    <select wire:model="section_1_line_1_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_1_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontWeights as $weight)
                         <option value="{{ $weight }}">{{ ucfirst(str_replace('font-', '', $weight)) }}</option>
                         @endforeach
@@ -141,7 +214,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Size
                     </label>
-                    <select wire:model="section_1_line_1_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_1_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontSizes as $size)
                         <option value="{{ $size }}">{{ ucfirst(str_replace('text-', '', $size)) }}</option>
                         @endforeach
@@ -153,7 +226,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Text Alignment
                     </label>
-                    <select wire:model="section_1_line_1_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_1_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($textAlignments as $alignment)
                         <option value="{{ $alignment }}">{{ ucfirst(str_replace('text-', '', $alignment)) }}</option>
                         @endforeach
@@ -173,17 +246,17 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative group">
                             <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                                style="background-color: {{ $section_1_line_2_font_color }};">
+                                style="background-color: {{ $section_2_line_2_font_color }};">
                                 <input
                                     type="color"
-                                    wire:model="section_1_line_2_font_color"
+                                    wire:model="section_2_line_2_font_color"
                                     class="opacity-0 w-full h-full cursor-pointer"
                                     title="Select text color">
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
-                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_line_2_font_color }}</span></p>
+                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_line_2_font_color }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -194,7 +267,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Family
                     </label>
-                    <select wire:model="section_1_line_2_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_2_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontFamilies as $font)
                         <option value="{{ $font }}">{{ $font }}</option>
                         @endforeach
@@ -206,7 +279,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Weight
                     </label>
-                    <select wire:model="section_1_line_2_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_2_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontWeights as $weight)
                         <option value="{{ $weight }}">{{ ucfirst(str_replace('font-', '', $weight)) }}</option>
                         @endforeach
@@ -218,7 +291,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Size
                     </label>
-                    <select wire:model="section_1_line_2_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_2_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontSizes as $size)
                         <option value="{{ $size }}">{{ ucfirst(str_replace('text-', '', $size)) }}</option>
                         @endforeach
@@ -230,7 +303,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Text Alignment
                     </label>
-                    <select wire:model="section_1_line_2_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_line_2_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($textAlignments as $alignment)
                         <option value="{{ $alignment }}">{{ ucfirst(str_replace('text-', '', $alignment)) }}</option>
                         @endforeach
@@ -250,17 +323,17 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative group">
                             <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                                style="background-color: {{ $section_1_paragraph_3_font_color }};">
+                                style="background-color: {{ $section_2_paragraph_3_font_color }};">
                                 <input
                                     type="color"
-                                    wire:model="section_1_paragraph_3_font_color"
+                                    wire:model="section_2_paragraph_3_font_color"
                                     class="opacity-0 w-full h-full cursor-pointer"
                                     title="Select text color">
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
-                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_paragraph_3_font_color }}</span></p>
+                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_paragraph_3_font_color }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -271,7 +344,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Family
                     </label>
-                    <select wire:model="section_1_paragraph_3_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_paragraph_3_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontFamilies as $font)
                         <option value="{{ $font }}">{{ $font }}</option>
                         @endforeach
@@ -283,7 +356,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Weight
                     </label>
-                    <select wire:model="section_1_paragraph_3_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_paragraph_3_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontWeights as $weight)
                         <option value="{{ $weight }}">{{ ucfirst(str_replace('font-', '', $weight)) }}</option>
                         @endforeach
@@ -295,7 +368,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Size
                     </label>
-                    <select wire:model="section_1_paragraph_3_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_paragraph_3_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontSizes as $size)
                         <option value="{{ $size }}">{{ ucfirst(str_replace('text-', '', $size)) }}</option>
                         @endforeach
@@ -307,7 +380,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Text Alignment
                     </label>
-                    <select wire:model="section_1_paragraph_3_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_paragraph_3_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($textAlignments as $alignment)
                         <option value="{{ $alignment }}">{{ ucfirst(str_replace('text-', '', $alignment)) }}</option>
                         @endforeach
@@ -325,17 +398,17 @@
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
                         <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                            style="background-color: {{ $section_1_button_1_bg_color }};">
+                            style="background-color: {{ $section_2_button_1_bg_color }};">
                             <input
                                 type="color"
-                                wire:model="section_1_button_1_bg_color"
+                                wire:model="section_2_button_1_bg_color"
                                 class="opacity-0 w-full h-full cursor-pointer"
                                 title="Select background color">
                         </div>
                     </div>
                     <div class="flex-1">
                         <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
-                            <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_button_1_bg_color }}</span></p>
+                            <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_button_1_bg_color }}</span></p>
                         </div>
                     </div>
                 </div>
@@ -347,7 +420,7 @@
                 </label>
                 <input
                     type="url"
-                    wire:model="section_1_button_1_icon_link"
+                    wire:model="section_2_button_1_icon_link"
                     class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
                     placeholder="https://example.com/icon-link"
                     title="Enter icon link URL">
@@ -361,17 +434,17 @@
                     <div class="flex items-center space-x-4">
                         <div class="relative group">
                             <div class="w-10 h-10 rounded-lg border border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                                style="background-color: {{ $section_1_button_1_font_color }};">
+                                style="background-color: {{ $section_2_button_1_font_color }};">
                                 <input
                                     type="color"
-                                    wire:model="section_1_button_1_font_color"
+                                    wire:model="section_2_button_1_font_color"
                                     class="opacity-0 w-full h-full cursor-pointer"
                                     title="Select text color">
                             </div>
                         </div>
                         <div class="flex-1">
                             <div class="bg-gray-50 rounded-md p-2 border border-gray-200">
-                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_1_button_1_font_color }}</span></p>
+                                <p class="text-sm font-medium text-gray-700">Selected: <span class="text-sm text-gray-500">{{ $section_2_button_1_font_color }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -382,7 +455,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Family
                     </label>
-                    <select wire:model="section_1_button_1_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_button_1_font_name" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontFamilies as $font)
                         <option value="{{ $font }}">{{ $font }}</option>
                         @endforeach
@@ -394,7 +467,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Weight
                     </label>
-                    <select wire:model="section_1_button_1_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_button_1_font_weight" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontWeights as $weight)
                         <option value="{{ $weight }}">{{ ucfirst(str_replace('font-', '', $weight)) }}</option>
                         @endforeach
@@ -406,7 +479,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Font Size
                     </label>
-                    <select wire:model="section_1_button_1_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_button_1_font_size" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($fontSizes as $size)
                         <option value="{{ $size }}">{{ ucfirst(str_replace('text-', '', $size)) }}</option>
                         @endforeach
@@ -418,7 +491,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-3">
                         Text Alignment
                     </label>
-                    <select wire:model="section_1_button_1_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
+                    <select wire:model="section_2_button_1_text_alignment" class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors">
                         @foreach($textAlignments as $alignment)
                         <option value="{{ $alignment }}">{{ ucfirst(str_replace('text-', '', $alignment)) }}</option>
                         @endforeach
@@ -427,9 +500,9 @@
             </div>
             <button
                 type="button"
-                wire:click="updateSection1"
+                wire:click="updateSection2"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer">
-                Update Section 1
+                Update Section 2
             </button>
         </div>
     </div>

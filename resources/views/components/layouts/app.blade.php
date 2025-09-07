@@ -152,7 +152,7 @@
                  x-transition:leave="transition ease-in duration-200"
                  x-transition:leave-start="opacity-100"
                  x-transition:leave-end="opacity-0"
-                 class="border border-gray-200 border-l-4 rounded-lg shadow-xl p-4 w-full ring-1 ring-black ring-opacity-5"
+                 class="border border-gray-200 border-l-4 rounded-lg shadow-xl p-4 w-full"
                  :class="{
                      'bg-green-50 border-l-green-500 border-green-200': toast.type === 'success',
                      'bg-red-50 border-l-red-500 border-red-200': toast.type === 'error',
