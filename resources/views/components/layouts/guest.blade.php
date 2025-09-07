@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="min-h-screen px-4">
+    <div class="px-4">
         <div class="w-full max-w-md shadow-lg mx-auto" style="background-color: {{ $landingBgColor }};">
             {{ $slot }}
         </div>
