@@ -31,6 +31,11 @@ class Section4 extends Component
     public $section_4_button_1_text_alignment;
     public $section_4_button_1_icon_link;
 
+    public $fontFamilies;
+    public $fontWeights;
+    public $fontSizes;
+    public $textAlignments;
+
     public function mount()
     {
         // Initialize Section 4
@@ -56,6 +61,12 @@ class Section4 extends Component
         $this->section_4_button_1_font_color = BaseModel::getOptionValue('section_4_button_1_font_color', '#ffffff');
         $this->section_4_button_1_text_alignment = BaseModel::getOptionValue('section_4_button_1_text_alignment', AppConstants::TEXT_ALIGNMENT[1]);
         $this->section_4_button_1_icon_link = BaseModel::getOptionValue('section_4_button_1_icon_link', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/4/calendaricon.png');
+        
+        // Initialize font arrays
+        $this->fontFamilies = AppConstants::FONT_FAMILIES;
+        $this->fontWeights = AppConstants::FONT_WEIGHTS;
+        $this->fontSizes = AppConstants::FONT_SIZES;
+        $this->textAlignments = AppConstants::TEXT_ALIGNMENT;
     }
 
     public function updateSection4()
@@ -84,6 +95,7 @@ class Section4 extends Component
         BaseModel::setOptionValue('section_4_button_1_icon_link', $this->section_4_button_1_icon_link);
         
         session()->flash('message', 'Section 4 updated successfully!');
+        $this->dispatch('toast', message: 'Section 4 updated successfully!', type: 'success');
     }
 
     public function render()

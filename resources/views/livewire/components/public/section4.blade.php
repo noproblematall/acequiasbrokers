@@ -1,22 +1,22 @@
 <div>
     @if(!$section_4_is_disabled)
-        <div class="py-8" style="background-color: {{ $section_4_bg_color }};">
-            <div class="flex items-center gap-8">
+        <div class="py-4" style="background-color: {{ $section_4_bg_color }};">
+            <div class="flex items-center gap-6">
                 <!-- Picture Section -->
-                <div class="w-1/3">
+                <div class="w-1/3 p-4">
                     <img src="{{ $section_4_picture_link }}" alt="Section 4" class="w-full h-auto rounded-lg">
                 </div>
                 
                 <!-- Content Section -->
-                <div class="w-1/3 space-y-6">
+                <div class="w-2/3">
                     <!-- Line 1 -->
-                    <h2 class="{{ $section_4_line_1_font_weight }} {{ $section_4_line_1_font_size }} {{ $section_4_line_1_text_alignment }}" 
+                    <h2 class="mb-2 {{ $section_4_line_1_font_weight }} {{ $section_4_line_1_font_size }} {{ $section_4_line_1_text_alignment }}" 
                         style="font-family: {{ $section_4_line_1_font_name }}; color: {{ $section_4_line_1_font_color }};">
                         {{ $section_4_line_1 }}
                     </h2>
                     
                     <!-- Line 2 -->
-                    <p class="{{ $section_4_line_2_font_weight }} {{ $section_4_line_2_font_size }} {{ $section_4_line_2_text_alignment }}" 
+                    <p class="mb-2 {{ $section_4_line_2_font_weight }} {{ $section_4_line_2_font_size }} {{ $section_4_line_2_text_alignment }}" 
                        style="font-family: {{ $section_4_line_2_font_name }}; color: {{ $section_4_line_2_font_color }};">
                         {{ $section_4_line_2 }}
                     </p>

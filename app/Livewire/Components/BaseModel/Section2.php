@@ -102,6 +102,7 @@ class Section2 extends Component
         BaseModel::setOptionValue('section_2_button_1_icon_link', $this->section_2_button_1_icon_link);
         
         session()->flash('message', 'Section 2 updated successfully!');
+        $this->dispatch('toast', message: 'Section 2 updated successfully!', type: 'success');
     }
 
     public function render()

@@ -34,6 +34,7 @@ class Section4 extends Component
         );
 
         session()->flash('message', 'Section 4 personalization updated successfully!');
+        $this->dispatch('toast', message: 'Section 4 personalization updated successfully!', type: 'success');
     }
 
     public function render()
