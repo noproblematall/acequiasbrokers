@@ -31,9 +31,9 @@
                         </p>
                     @endif
                     
-                    @if($button_link)
+                    @if($section_2_button_link)
                         <div class="{{ $section_2_button_1_text_alignment }}">
-                            <a href="{{ $button_link }}" 
+                            <a href="{{ $section_2_button_link }}" 
                                target="_blank"
                                class="inline-flex items-center px-4 py-2 rounded-full transition-colors duration-200 {{ $section_2_button_1_font_weight }} {{ $section_2_button_1_font_size }}"
                                style="background-color: {{ $section_2_button_1_bg_color }}; font-family: {{ $section_2_button_1_font_name }}; color: {{ $section_2_button_1_font_color }};">

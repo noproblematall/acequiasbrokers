@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Components\Personalization;
 
 use App\Models\Broker;
 use App\Models\Personalization;
 use Livewire\Component;
 
-class BrokerDetail extends Component
+class Section2 extends Component
 {
     public Broker $broker;
     
@@ -15,7 +15,6 @@ class BrokerDetail extends Component
     public $section_2_line_2;
     public $section_2_paragraph_3;
     public $section_2_button_link;
-    public $section_4_button_link;
 
     public function mount(Broker $broker)
     {
@@ -28,7 +27,6 @@ class BrokerDetail extends Component
             $this->section_2_line_2 = $personalization->section_2_line_2;
             $this->section_2_paragraph_3 = $personalization->section_2_paragraph_3;
             $this->section_2_button_link = $personalization->section_2_button_link;
-            $this->section_4_button_link = $personalization->section_4_button_link;
         }
     }
 
@@ -41,15 +39,14 @@ class BrokerDetail extends Component
                 'section_2_line_2' => $this->section_2_line_2,
                 'section_2_paragraph_3' => $this->section_2_paragraph_3,
                 'section_2_button_link' => $this->section_2_button_link,
-                'section_4_button_link' => $this->section_4_button_link,
             ]
         );
 
-        $this->js('window.toast("Section 2 personalization updated successfully!", "success")');
+        session()->flash('message', 'Section 2 personalization updated successfully!');
     }
 
     public function render()
     {
-        return view('livewire.broker-detail')->layout('components.layouts.app');
+        return view('livewire.components.personalization.section2');
     }
 }

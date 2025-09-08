@@ -8,6 +8,7 @@ class AppConstants
         'GEOMETOS',
         'HelveticaNeue',
         'Ubuntu',
+        'Helvetica Neue Roman',
         'Arial',
         'Helvetica',
         'Times New Roman',

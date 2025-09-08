@@ -26,68 +26,7 @@
         </div>
     </div>
 
-    <!-- Section 2 Personalization -->
-    <div class="bg-white rounded-xl shadow-sm">
-        <div class="p-4 space-y-4 border-b border-gray-300">
-            <h2 class="text-xl font-semibold text-gray-900 mb-4">Section 2</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <!-- Section 2 Line 1 -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-3">
-                        Line 1
-                    </label>
-                    <input
-                        type="text"
-                        wire:model="section_2_line_1"
-                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="Enter line 1 text">
-                </div>
-
-                <!-- Section 2 Line 2 -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-3">
-                        Line 2
-                    </label>
-                    <input
-                        type="text"
-                        wire:model="section_2_line_2"
-                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="Enter line 2 text">
-                </div>
-
-                <!-- Section 2 Paragraph 3 -->
-                <div class="lg:col-span-2">
-                    <label class="block text-sm font-medium text-gray-700 mb-3">
-                        Paragraph 3
-                    </label>
-                    <textarea
-                        wire:model="section_2_paragraph_3"
-                        rows="3"
-                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="Enter paragraph 3 text"></textarea>
-                </div>
-
-                <!-- Button Link -->
-                <div class="lg:col-span-2">
-                    <label class="block text-sm font-medium text-gray-700 mb-3">
-                        Button Link
-                    </label>
-                    <input
-                        type="url"
-                        wire:model="button_link"
-                        class="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors"
-                        placeholder="https://example.com">
-                </div>
-            </div>
-
-            <button
-                type="button"
-                wire:click="updatePersonalization"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer">
-                Update
-            </button>
-        </div>
-    </div>
+    <livewire:components.personalization.section2 :broker="$broker" />
+    <livewire:components.personalization.section4 :broker="$broker" />
 
 </div>

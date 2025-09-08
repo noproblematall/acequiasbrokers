@@ -12,7 +12,8 @@ class Personalization extends Model
         'section_2_line_1',
         'section_2_line_2', 
         'section_2_paragraph_3',
-        'button_link',
+        'section_2_button_link',
+        'section_4_button_link',
     ];
 
     public function broker(): BelongsTo

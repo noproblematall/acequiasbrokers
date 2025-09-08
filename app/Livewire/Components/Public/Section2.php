@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Components\Public;
 
 use App\Models\BaseModel;
 use App\Models\Broker;
@@ -15,7 +15,7 @@ class Section2 extends Component
     public $section_2_line_1;
     public $section_2_line_2;
     public $section_2_paragraph_3;
-    public $button_link;
+    public $section_2_button_link;
     
     // Line 1 styling
     public $section_2_line_1_font_name;
@@ -88,13 +88,13 @@ class Section2 extends Component
                 $this->section_2_line_1 = $personalization->section_2_line_1 ?: $this->section_2_line_1;
                 $this->section_2_line_2 = $personalization->section_2_line_2 ?: $this->section_2_line_2;
                 $this->section_2_paragraph_3 = $personalization->section_2_paragraph_3 ?: $this->section_2_paragraph_3;
-                $this->button_link = $personalization->button_link ?: $this->button_link;
+                $this->section_2_button_link = $personalization->section_2_button_link ?: $this->section_2_button_link;
             }
         }
     }
 
     public function render()
     {
-        return view('livewire.section2');
+        return view('livewire.components.public.section2');
     }
 }
