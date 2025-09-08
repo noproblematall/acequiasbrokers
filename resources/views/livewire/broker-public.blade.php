@@ -6,4 +6,5 @@
     <livewire:components.public.section6 :broker="$broker" />
     <livewire:components.public.section7 :broker="$broker" />
     <livewire:components.public.section8 :broker="$broker" />
+    <livewire:components.public.section9 :broker="$broker" />
 </div>
