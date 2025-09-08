@@ -8,4 +8,13 @@
     <livewire:components.public.section8 :broker="$broker" />
     <livewire:components.public.section9 :broker="$broker" />
     <livewire:components.public.section10 :broker="$broker" />
+    
+    <!-- Footer -->
+    <footer class="">
+        <div class="text-right px-4">
+            <p class="text-sm text-blue-600">
+                © {{ config('app.name') }} {{ date('Y') }}
+            </p>
+        </div>
+    </footer>
 </div>
