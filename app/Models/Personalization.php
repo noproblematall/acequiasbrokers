@@ -7,14 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Personalization extends Model
 {
-    protected $fillable = [
-        'broker_id',
-        'section_2_line_1',
-        'section_2_line_2', 
-        'section_2_paragraph_3',
-        'section_2_button_link',
-        'section_4_button_link',
-    ];
+    protected $guarded = [];
 
     public function broker(): BelongsTo
     {

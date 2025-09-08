@@ -2,4 +2,5 @@
     <livewire:components.public.section1 />
     <livewire:components.public.section2 :broker="$broker" />
     <livewire:components.public.section4 :broker="$broker" />
+    <livewire:components.public.section5 :broker="$broker" />
 </div>

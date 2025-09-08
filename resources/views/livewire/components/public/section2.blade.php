@@ -1,7 +1,7 @@
 <div>
     @if(!$section_2_is_disabled)
-        <div class="py-4" style="background-color: {{ $section_2_bg_color }};">
-            <div class="flex items-center gap-6">
+        <div class="mb-4" style="background-color: {{ $section_2_bg_color }};">
+            <div class="flex items-center p-2 gap-2">
                 <!-- Logo Section (1 part width) -->
                 <div class="w-1/3">
                     <div class="flex justify-center items-center h-full">
@@ -38,9 +38,9 @@
                                class="inline-flex items-center px-4 py-2 rounded-full transition-colors duration-200 {{ $section_2_button_1_font_weight }} {{ $section_2_button_1_font_size }}"
                                style="background-color: {{ $section_2_button_1_bg_color }}; font-family: {{ $section_2_button_1_font_name }}; color: {{ $section_2_button_1_font_color }};">
                                 @if($section_2_button_1_icon_link)
-                                    <img src="{{ $section_2_button_1_icon_link }}" alt="Icon" class="w-5 h-5 ml-2">
+                                    <img src="{{ $section_2_button_1_icon_link }}" alt="Icon" class="w-5 h-5 mr-2">
                                 @endif
-                                &nbsp;Hagamos realidad tu plan
+                                Hagamos realidad tu plan
                             </a>
                         </div>
                     @endif

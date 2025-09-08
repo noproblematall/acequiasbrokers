@@ -33,7 +33,6 @@ class Section5 extends Component
             ]
         );
 
-        session()->flash('message', 'Section 5 personalization updated successfully!');
         $this->dispatch('toast', message: 'Section 5 personalization updated successfully!', type: 'success');
     }
 

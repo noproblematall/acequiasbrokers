@@ -1,9 +1,9 @@
 <div>
     @if(!$section_4_is_disabled)
-        <div class="py-4" style="background-color: {{ $section_4_bg_color }};">
-            <div class="flex items-center gap-6">
+        <div class="mb-4" style="background-color: {{ $section_4_bg_color }};">
+            <div class="flex items-center gap-2 p-2">
                 <!-- Picture Section -->
-                <div class="w-1/3 p-4">
+                <div class="w-1/3">
                     <img src="{{ $section_4_picture_link }}" alt="Section 4" class="w-full h-auto rounded-lg">
                 </div>
                 
@@ -22,16 +22,16 @@
                     </p>
                     
                     <!-- Button -->
-                    @if($section_2_button_link)
+                    @if($section_4_button_link)
                         <div class="{{ $section_4_button_1_text_alignment }}">
-                            <a href="{{ $section_2_button_link }}" 
+                            <a href="{{ $section_4_button_link }}" 
                                target="_blank"
                                class="inline-flex items-center px-4 py-2 rounded-full transition-colors duration-200 {{ $section_4_button_1_font_weight }} {{ $section_4_button_1_font_size }}"
                                style="background-color: {{ $section_4_button_1_bg_color }}; font-family: {{ $section_4_button_1_font_name }}; color: {{ $section_4_button_1_font_color }};">
                                 @if($section_4_button_1_icon_link)
                                     <img src="{{ $section_4_button_1_icon_link }}" alt="Icon" class="w-5 h-5 mr-2">
                                 @endif
-                                &nbsp;Agenda una visita
+                                Agenda una visita
                             </a>
                         </div>
                     @endif

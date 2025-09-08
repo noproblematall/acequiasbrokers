@@ -13,7 +13,7 @@ class Section4 extends Component
     public $section_4_bg_color;
     public $section_4_is_disabled;
     public $section_4_picture_link;
-    public $section_2_button_link;
+    public $section_4_button_link;
     
     // Line 1 styling
     public $section_4_line_1;
@@ -75,7 +75,7 @@ class Section4 extends Component
         if ($this->broker) {
             $personalization = Personalization::where('broker_id', $this->broker->id)->first();
             if ($personalization && $personalization->section_4_button_link) {
-                $this->section_2_button_link = $personalization->section_4_button_link;
+                $this->section_4_button_link = $personalization->section_4_button_link;
             }
         }
     }
