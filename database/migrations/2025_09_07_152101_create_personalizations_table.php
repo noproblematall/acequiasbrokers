@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('section_2_paragraph_3')->nullable();
             $table->text('section_2_button_link')->nullable();
             $table->text('section_4_button_link')->nullable();
+            $table->text('section_5_button_link')->nullable();
             $table->timestamps();
         });
     }

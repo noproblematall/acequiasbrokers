@@ -18,4 +18,5 @@
     <livewire:components.base-model.section1 />
     <livewire:components.base-model.section2 />
     <livewire:components.base-model.section4 />
+    <livewire:components.base-model.section5 />
 </div>

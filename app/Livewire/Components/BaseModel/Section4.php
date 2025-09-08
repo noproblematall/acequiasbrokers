@@ -94,7 +94,6 @@ class Section4 extends Component
         BaseModel::setOptionValue('section_4_button_1_text_alignment', $this->section_4_button_1_text_alignment);
         BaseModel::setOptionValue('section_4_button_1_icon_link', $this->section_4_button_1_icon_link);
         
-        session()->flash('message', 'Section 4 updated successfully!');
         $this->dispatch('toast', message: 'Section 4 updated successfully!', type: 'success');
     }
 
