@@ -57,7 +57,7 @@ class Section6 extends Component
         
         // Load base model values
         $this->section_6_is_disabled = (bool) BaseModel::getOptionValue('section_6_is_disabled', 0);
-        $this->section_6_bg_color = BaseModel::getOptionValue('section_6_bg_color', '#01c8c5');
+        $this->section_6_bg_color = BaseModel::getOptionValue('section_6_bg_color', '#004de6');
         
         // Rectangle 1
         $this->section_6_rect1_icon_link = BaseModel::getOptionValue('section_6_rect1_icon_link', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/6/compraico.png');

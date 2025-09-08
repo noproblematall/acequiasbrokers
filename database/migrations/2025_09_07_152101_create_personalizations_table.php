@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('section_4_button_link')->nullable();
             $table->text('section_5_button_link')->nullable();
             $table->text('section_6_button_link')->nullable();
+            $table->text('section_7_item1_icon_link')->nullable();
+            $table->text('section_7_item2_icon_link')->nullable();
+            $table->text('section_7_item3_icon_link')->nullable();
             $table->timestamps();
         });
     }

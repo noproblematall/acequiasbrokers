@@ -30,5 +30,6 @@
     <livewire:components.personalization.section4 :broker="$broker" />
     <livewire:components.personalization.section5 :broker="$broker" />
     <livewire:components.personalization.section6 :broker="$broker" />
+    <livewire:components.personalization.section7 :broker="$broker" />
 
 </div>
