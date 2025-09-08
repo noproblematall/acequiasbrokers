@@ -23,4 +23,5 @@
     <livewire:components.base-model.section7 />
     <livewire:components.base-model.section8 />
     <livewire:components.base-model.section9 />
+    <livewire:components.base-model.section10 />
 </div>
