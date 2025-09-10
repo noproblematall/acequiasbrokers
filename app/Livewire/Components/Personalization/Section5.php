@@ -34,6 +34,8 @@ class Section5 extends Component
         );
 
         $this->dispatch('toast', message: 'Section 5 personalization updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-5');
+        $this->dispatch('refresh-preview-section-5');
     }
 
     public function render()

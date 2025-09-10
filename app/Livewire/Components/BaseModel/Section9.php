@@ -116,6 +116,7 @@ class Section9 extends Component
         BaseModel::setOptionValue('section_9_button_text', $this->section_9_button_text);
         
         $this->dispatch('toast', message: 'Section 9 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-9');
     }
 
     public function render()

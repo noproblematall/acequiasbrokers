@@ -170,6 +170,7 @@ class Section8 extends Component
         BaseModel::setOptionValue('section_8_button4_icon_url', $this->section_8_button4_icon_url);
         
         $this->dispatch('toast', message: 'Section 8 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-8');
     }
 
     public function render()

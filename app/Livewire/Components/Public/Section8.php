@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class Section8 extends Component
 {
+    protected $listeners = ['refresh-preview-section-8' => 'refreshPreview'];
     public $broker;
     
     // Section properties
@@ -115,6 +116,11 @@ class Section8 extends Component
         $this->section_8_button4_text = BaseModel::getOptionValue('section_8_button4_text', 'Compartir en');
         $this->section_8_button4_link = BaseModel::getOptionValue('section_8_button4_link', 'mailto:?subject=Mira%20esto&body=Te%20env%C3%ADo%20este%20enlace:%20[THIS_LANDING_PAGE_URL]');
         $this->section_8_button4_icon_url = BaseModel::getOptionValue('section_8_button4_icon_url', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/8/email.png');
+    }
+
+    public function refreshPreview()
+    {
+        $this->mount($this->broker);
     }
 
     public function render()

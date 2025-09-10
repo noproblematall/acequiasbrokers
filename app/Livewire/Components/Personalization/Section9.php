@@ -34,6 +34,7 @@ class Section9 extends Component
         );
 
         $this->dispatch('toast', message: 'Section 9 personalization updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-9');
     }
 
     public function render()

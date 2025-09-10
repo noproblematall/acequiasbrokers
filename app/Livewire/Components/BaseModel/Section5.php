@@ -139,6 +139,7 @@ class Section5 extends Component
         BaseModel::setOptionValue('section_5_button_icon_link', $this->section_5_button_icon_link);
         
         $this->dispatch('toast', message: 'Section 5 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-5');
     }
 
     public function render()

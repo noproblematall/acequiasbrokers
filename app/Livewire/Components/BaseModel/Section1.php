@@ -28,6 +28,7 @@ class Section1 extends Component
         BaseModel::setOptionValue('section_1_is_disabled', $this->section_1_is_disabled);
         
         $this->dispatch('toast', message: 'Section 1 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-1');
     }
 
     public function render()

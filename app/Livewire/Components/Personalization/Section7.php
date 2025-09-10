@@ -40,6 +40,7 @@ class Section7 extends Component
         );
 
         $this->dispatch('toast', message: 'Section 7 personalization updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-7');
     }
 
     public function render()

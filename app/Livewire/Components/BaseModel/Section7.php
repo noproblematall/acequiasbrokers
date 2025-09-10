@@ -143,6 +143,7 @@ class Section7 extends Component
         BaseModel::setOptionValue('section_7_item3_icon_url', $this->section_7_item3_icon_url);
         
         $this->dispatch('toast', message: 'Section 7 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-7');
     }
 
     public function render()

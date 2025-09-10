@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class Section1 extends Component
 {
+    protected $listeners = ['refresh-preview-section-1' => 'refreshPreview'];
     public $section_1_logo_link;
     public $section_1_logo_width;
     public $section_1_bg_color;
@@ -26,6 +27,11 @@ class Section1 extends Component
         $this->section_1_logo_width = BaseModel::getOptionValue('section_1_logo_width', '100');
         $this->section_1_bg_color = BaseModel::getOptionValue('section_1_bg_color', '#ffffff');
         $this->section_1_is_disabled = BaseModel::getOptionValue('section_1_is_disabled', false);
+    }
+
+    public function refreshPreview()
+    {
+        $this->mount($this->broker);
     }
 
     public function render()

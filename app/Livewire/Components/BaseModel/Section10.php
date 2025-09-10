@@ -86,6 +86,7 @@ class Section10 extends Component
         BaseModel::setOptionValue('section_10_icon3_link', $this->section_10_icon3_link);
         
         $this->dispatch('toast', message: 'Section 10 updated successfully!', type: 'success');
+        $this->dispatch('refresh-preview-section-10');
     }
 
     public function render()

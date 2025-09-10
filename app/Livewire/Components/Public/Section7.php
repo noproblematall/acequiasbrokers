@@ -9,6 +9,7 @@ use Livewire\Component;
 
 class Section7 extends Component
 {
+    protected $listeners = ['refresh-preview-section-7' => 'refreshPreview'];
     public $broker;
     
     // Section properties
@@ -119,6 +120,11 @@ class Section7 extends Component
                 }
             }
         }
+    }
+
+    public function refreshPreview()
+    {
+        $this->mount($this->broker);
     }
 
     public function render()
