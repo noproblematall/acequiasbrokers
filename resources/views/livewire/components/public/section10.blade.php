@@ -1,6 +1,6 @@
 <div>
     @if(!$section_10_is_disabled)
-    <section class="mb-4">
+    <section class="">
         <!-- Rectangle 1 -->
         <div class="p-2 mb-1" style="background-color: {{ $section_10_bg_color }};">
             <div class="flex items-center">

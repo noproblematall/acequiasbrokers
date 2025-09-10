@@ -1,7 +1,4 @@
-<div class="bg-white rounded-xl shadow-sm border border-gray-100">
-    <div class="flex flex-col lg:flex-row gap-6">
-        <!-- Left side - Configuration -->
-        <div class="flex-1 p-6">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <div class="flex items-center justify-between mb-6">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg flex items-center justify-center">
@@ -272,13 +269,4 @@
                     </button>
                 </div>
             </div>
-        </div>
-
-        <!-- Right side - Preview -->
-        <div class="w-full max-w-md p-4 bg-gray-100 flex items-center">
-            <div class="bg-white border border-gray-200 rounded p-3 w-full">
-                <livewire:components.public.section9 />
-            </div>
-        </div>
-    </div>
 </div>

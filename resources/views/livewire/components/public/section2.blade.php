@@ -1,6 +1,6 @@
 <div>
     @if(!$section_2_is_disabled)
-        <div class="mb-4" style="background-color: {{ $section_2_bg_color }};">
+        <div class="" style="background-color: {{ $section_2_bg_color }};">
             <div class="flex items-center p-2 gap-2">
                 <!-- Logo Section (1 part width) -->
                 <div>

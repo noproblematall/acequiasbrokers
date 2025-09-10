@@ -15,13 +15,103 @@
     </div>
 
     <livewire:components.base-model.landing-level />
-    <livewire:components.base-model.section1 />
-    <livewire:components.base-model.section2 />
-    <livewire:components.base-model.section4 />
-    <livewire:components.base-model.section5 />
-    <livewire:components.base-model.section6 />
-    <livewire:components.base-model.section7 />
-    <livewire:components.base-model.section8 />
-    <livewire:components.base-model.section9 />
-    <livewire:components.base-model.section10 />
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section1 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section1 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section2 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section2 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section4 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section4 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section5 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section5 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section6 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section6 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section7 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section7 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section8 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section8 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section9 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section9 />
+            </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
+            <livewire:components.base-model.section10 />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section10 />
+            </div>
+        </div>
+    </div>
 </div>

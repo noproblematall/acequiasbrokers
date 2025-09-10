@@ -1,6 +1,6 @@
 <div>
     @if(!$section_4_is_disabled)
-        <div class="mb-4" style="background-color: {{ $section_4_bg_color }};">
+        <div class="" style="background-color: {{ $section_4_bg_color }};">
             <div class="flex items-center gap-2 p-2">
                 <!-- Picture Section -->
                 <div class="w-1/3">
