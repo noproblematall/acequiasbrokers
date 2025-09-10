@@ -31,7 +31,7 @@
                                 @if($section_4_button_1_icon_link)
                                     <img src="{{ $section_4_button_1_icon_link }}" alt="Icon" class="w-5 h-5 mr-2">
                                 @endif
-                                Agenda una visita
+                                {{ $section_4_button_1_text }}
                             </a>
                         </div>
                     @endif

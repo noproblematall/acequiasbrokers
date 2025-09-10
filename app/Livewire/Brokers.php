@@ -21,7 +21,7 @@ class Brokers extends Component
         'first_name' => 'required|string|max:255',
         'last_name' => 'required|string|max:255',
         'url' => 'required|string|max:255|unique:brokers,url',
-        'email' => 'nullable|email|max:255|unique:brokers,email',
+        'email' => 'nullable|email|max:255',
     ];
 
 
@@ -56,7 +56,13 @@ class Brokers extends Component
         $rules = $this->rules;
         if ($this->selectedBrokerId) {
             $rules['url'] = 'required|string|max:255|unique:brokers,url,' . $this->selectedBrokerId;
-            $rules['email'] = 'nullable|email|max:255|unique:brokers,email,' . $this->selectedBrokerId;
+            if (!empty($this->email)) {
+                $rules['email'] = 'nullable|email|max:255|unique:brokers,email,' . $this->selectedBrokerId;
+            }
+        } else {
+            if (!empty($this->email)) {
+                $rules['email'] = 'nullable|email|max:255|unique:brokers,email';
+            }
         }
 
         $this->validate($rules);
@@ -65,7 +71,7 @@ class Brokers extends Component
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'url' => $this->url,
-            'email' => $this->email,
+            'email' => !empty($this->email) ? $this->email : null,
         ];
 
         if ($this->selectedBrokerId) {

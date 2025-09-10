@@ -171,6 +171,12 @@
                     <input type="url" wire:model="section_4_button_1_icon_link" class="w-full rounded-lg border border-gray-300 px-4 h-10 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://example.com/icon.png">
                 </div>
 
+                <!-- Button Text -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Button Text</label>
+                    <input type="text" wire:model="section_4_button_1_text" class="w-full rounded-lg border border-gray-300 px-4 h-10 focus:outline-none focus:ring-2 focus:ring-blue-500" >
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Button BG Color</label>

@@ -29,6 +29,7 @@ class Section4 extends Component
     public $section_4_button_1_font_size;
     public $section_4_button_1_font_color;
     public $section_4_button_1_text_alignment;
+    public $section_4_button_1_text;
     public $section_4_button_1_icon_link;
 
     public $fontFamilies;
@@ -60,6 +61,7 @@ class Section4 extends Component
         $this->section_4_button_1_font_size = BaseModel::getOptionValue('section_4_button_1_font_size', AppConstants::FONT_SIZES[2]);
         $this->section_4_button_1_font_color = BaseModel::getOptionValue('section_4_button_1_font_color', '#ffffff');
         $this->section_4_button_1_text_alignment = BaseModel::getOptionValue('section_4_button_1_text_alignment', AppConstants::TEXT_ALIGNMENT[1]);
+        $this->section_4_button_1_text = BaseModel::getOptionValue('section_4_button_1_text', 'Agenda una visita');
         $this->section_4_button_1_icon_link = BaseModel::getOptionValue('section_4_button_1_icon_link', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/4/calendaricon.png');
         
         // Initialize font arrays
@@ -92,6 +94,7 @@ class Section4 extends Component
         BaseModel::setOptionValue('section_4_button_1_font_size', $this->section_4_button_1_font_size);
         BaseModel::setOptionValue('section_4_button_1_font_color', $this->section_4_button_1_font_color);
         BaseModel::setOptionValue('section_4_button_1_text_alignment', $this->section_4_button_1_text_alignment);
+        BaseModel::setOptionValue('section_4_button_1_text', $this->section_4_button_1_text);
         BaseModel::setOptionValue('section_4_button_1_icon_link', $this->section_4_button_1_icon_link);
         
         $this->dispatch('toast', message: 'Section 4 updated successfully!', type: 'success');

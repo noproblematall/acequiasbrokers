@@ -39,6 +39,7 @@ class Section4 extends Component
     public $section_4_button_1_font_color;
     public $section_4_button_1_text_alignment;
     public $section_4_button_1_icon_link;
+    public $section_4_button_1_text;
 
     public function mount($broker = null)
     {
@@ -70,6 +71,7 @@ class Section4 extends Component
         $this->section_4_button_1_font_color = BaseModel::getOptionValue('section_4_button_1_font_color', '#ffffff');
         $this->section_4_button_1_text_alignment = BaseModel::getOptionValue('section_4_button_1_text_alignment', 'text-center');
         $this->section_4_button_1_icon_link = BaseModel::getOptionValue('section_4_button_1_icon_link', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/4/calendaricon.png');
+        $this->section_4_button_1_text = BaseModel::getOptionValue('section_4_button_1_text', 'Agenda una visita');
         
         // Override with broker personalization if exists
         if ($this->broker) {
