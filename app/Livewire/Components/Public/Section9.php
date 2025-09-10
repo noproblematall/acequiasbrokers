@@ -4,6 +4,7 @@ namespace App\Livewire\Components\Public;
 
 use App\Models\BaseModel;
 use App\Models\Broker;
+use App\Models\Personalization;
 use Livewire\Component;
 
 class Section9 extends Component
@@ -40,8 +41,9 @@ class Section9 extends Component
     public $section_9_button_font_size;
     public $section_9_button_text_alignment;
     public $section_9_button_text;
+
+    //Button link
     public $section_9_button_link;
-    public $section_9_button_icon_url;
 
     public function mount($broker = null)
     {
@@ -80,9 +82,17 @@ class Section9 extends Component
         $this->section_9_button_font_weight = BaseModel::getOptionValue('section_9_button_font_weight', 'font-normal');
         $this->section_9_button_font_size = BaseModel::getOptionValue('section_9_button_font_size', 'text-base');
         $this->section_9_button_text_alignment = BaseModel::getOptionValue('section_9_button_text_alignment', 'text-center');
-        $this->section_9_button_text = BaseModel::getOptionValue('section_9_button_text', 'Ver ubicación');
-        $this->section_9_button_link = BaseModel::getOptionValue('section_9_button_link', '#');
-        $this->section_9_button_icon_url = BaseModel::getOptionValue('section_9_button_icon_url', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/9/mapico.png');
+        $this->section_9_button_text = BaseModel::getOptionValue('section_9_button_text', '¿Cómo llego?');
+        
+        // Load personalization if broker exists
+        if ($this->broker) {
+            $personalization = Personalization::where('broker_id', $this->broker->id)->first();
+            if ($personalization) {
+                if ($personalization->section_9_button_link) {
+                    $this->section_9_button_link = $personalization->section_9_button_link;
+                }
+            }
+        }
     }
 
     public function render()

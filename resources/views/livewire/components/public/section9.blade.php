@@ -39,9 +39,6 @@
                         <a href="{{ $section_9_button_link }}" target="_blank"
                            class="inline-flex items-center px-4 py-2 rounded-full transition-colors duration-200 hover:opacity-90"
                            style="background-color: {{ $section_9_button_bg_color }};">
-                            @if($section_9_button_icon_url)
-                            <img src="{{ $section_9_button_icon_url }}" alt="Icon" class="w-4 h-4 mr-2">
-                            @endif
                             <span class="{{ $section_9_button_text_alignment }} {{ $section_9_button_font_size }} {{ $section_9_button_font_weight }}"
                                   style="color: {{ $section_9_button_font_color }}; font-family: {{ $section_9_button_font_name }};">
                                 {{ $section_9_button_text }}

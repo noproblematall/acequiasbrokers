@@ -83,6 +83,17 @@
     
     <div class="flex flex-col lg:flex-row gap-8">
         <div class="flex-1">
+            <livewire:components.personalization.section9 :broker="$broker" />
+        </div>
+        <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
+            <div class="w-full border border-gray-200 rounded p-2">
+                <livewire:components.public.section9 />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1">
             <livewire:components.personalization.section10 :broker="$broker" />
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">

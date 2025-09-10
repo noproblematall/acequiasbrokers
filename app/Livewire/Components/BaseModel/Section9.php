@@ -37,8 +37,6 @@ class Section9 extends Component
     public $section_9_button_font_size;
     public $section_9_button_text_alignment;
     public $section_9_button_text;
-    public $section_9_button_link;
-    public $section_9_button_icon_url;
 
     public $fontFamilies;
     public $fontWeights;
@@ -76,9 +74,7 @@ class Section9 extends Component
         $this->section_9_button_font_weight = BaseModel::getOptionValue('section_9_button_font_weight', AppConstants::FONT_WEIGHTS[3]);
         $this->section_9_button_font_size = BaseModel::getOptionValue('section_9_button_font_size', AppConstants::FONT_SIZES[2]);
         $this->section_9_button_text_alignment = BaseModel::getOptionValue('section_9_button_text_alignment', AppConstants::TEXT_ALIGNMENT[1]);
-        $this->section_9_button_text = BaseModel::getOptionValue('section_9_button_text', 'Ver ubicación');
-        $this->section_9_button_link = BaseModel::getOptionValue('section_9_button_link', '#');
-        $this->section_9_button_icon_url = BaseModel::getOptionValue('section_9_button_icon_url', 'https://acequiasb.s3.us-east-1.amazonaws.com/micros/9/mapico.png');
+        $this->section_9_button_text = BaseModel::getOptionValue('section_9_button_text', '¿Cómo llego?');
         
         // Initialize font arrays
         $this->fontFamilies = AppConstants::FONT_FAMILIES;
@@ -118,8 +114,6 @@ class Section9 extends Component
         BaseModel::setOptionValue('section_9_button_font_size', $this->section_9_button_font_size);
         BaseModel::setOptionValue('section_9_button_text_alignment', $this->section_9_button_text_alignment);
         BaseModel::setOptionValue('section_9_button_text', $this->section_9_button_text);
-        BaseModel::setOptionValue('section_9_button_link', $this->section_9_button_link);
-        BaseModel::setOptionValue('section_9_button_icon_url', $this->section_9_button_icon_url);
         
         $this->dispatch('toast', message: 'Section 9 updated successfully!', type: 'success');
     }
