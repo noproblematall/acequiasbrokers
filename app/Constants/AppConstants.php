@@ -6,9 +6,30 @@ class AppConstants
 {
     public const FONT_FAMILIES = [
         'GEOMETOS',
-        'HelveticaNeue',
         'Ubuntu',
-        'Helvetica Neue Roman',
+        'Montserrat',
+        'Poppins',
+        'Roboto',
+        'Inter',
+        'Open Sans',
+        'Nunito Sans',
+        'HelveticaNeueBlack',
+        'HelveticaNeueBlackItalic',
+        'HelveticaNeueBold',
+        'HelveticaNeueBoldItalic',
+        'HelveticaNeueHeavy',
+        'HelveticaNeueHeavyItalic',
+        'HelveticaNeueItalic',
+        'HelveticaNeueLight',
+        'HelveticaNeueLightItalic',
+        'HelveticaNeueMedium',
+        'HelveticaNeueMediumItalic',
+        'HelveticaNeueRoman',
+        'HelveticaNeueThin',
+        'HelveticaNeueThinItalic',
+        'HelveticaNeueUltraLight',
+        'HelveticaNeueUltraLightItalic',
+        'monospace',
         'Arial',
         'Helvetica',
         'Times New Roman',
@@ -23,8 +44,7 @@ class AppConstants
         'Bookman',
         'Avant Garde',
         'sans-serif',
-        'serif',
-        'monospace'
+        'serif'
     ];
 
     public const FONT_WEIGHTS = [
