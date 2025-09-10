@@ -20,15 +20,15 @@
 
         <div class="space-y-6">
             <!-- Background Color -->
-            <div>
+            <div x-data="{ selectedColor: '{{ $section_4_bg_color }}' }">
                 <label class="block text-sm font-medium text-gray-700 mb-3">Background Color</label>
                 <div class="flex items-center space-x-4">
-                    <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" style="background-color: {{ $section_4_bg_color }};" wire:key="bg-color-{{ $section_4_bg_color }}">
-                        <input type="color" wire:model.live="section_4_bg_color" class="opacity-0 w-full h-full cursor-pointer">
+                    <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" :style="'background-color: ' + selectedColor" wire:key="bg-color-{{ $section_4_bg_color }}">
+                        <input type="color" wire:model="section_4_bg_color" x-model="selectedColor" class="opacity-0 w-full h-full cursor-pointer">
                     </div>
                     <div class="flex-1">
                         <div class="bg-gray-50 rounded-lg p-3 border border-gray-200 h-10 flex items-center">
-                            <p class="text-sm font-medium text-gray-700">Selected Color: <span class="font-mono text-sm text-gray-600">{{ $section_4_bg_color }}</span></p>
+                            <p class="text-sm font-medium text-gray-700">Selected Color: <span class="font-mono text-sm text-gray-600" x-text="selectedColor">{{ $section_4_bg_color }}</span></p>
                         </div>
                     </div>
                 </div>
@@ -77,13 +77,13 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Color</label>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" style="background-color: {{ $section_4_line_1_font_color }};" wire:key="line1-color-{{ $section_4_line_1_font_color }}">
-                                <input type="color" wire:model.live="section_4_line_1_font_color" class="opacity-0 w-full h-full cursor-pointer">
+                        <div class="flex items-center space-x-3" x-data="{ selectedColor: '{{ $section_4_line_1_font_color }}' }">
+                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" :style="'background-color: ' + selectedColor" wire:key="line1-color-{{ $section_4_line_1_font_color }}">
+                                <input type="color" wire:model="section_4_line_1_font_color" x-model="selectedColor" class="opacity-0 w-full h-full cursor-pointer">
                             </div>
                             <div class="flex-1">
                                 <div class="bg-gray-50 rounded-md p-2 border border-gray-200 h-10 flex items-center">
-                                    <p class="text-xs font-mono text-gray-600">{{ $section_4_line_1_font_color }}</p>
+                                    <p class="text-xs font-mono text-gray-600" x-text="selectedColor">{{ $section_4_line_1_font_color }}</p>
                                 </div>
                             </div>
                         </div>
@@ -136,13 +136,13 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Color</label>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" style="background-color: {{ $section_4_line_2_font_color }};" wire:key="line2-color-{{ $section_4_line_2_font_color }}">
-                                <input type="color" wire:model.live="section_4_line_2_font_color" class="opacity-0 w-full h-full cursor-pointer">
+                        <div class="flex items-center space-x-3" x-data="{ selectedColor: '{{ $section_4_line_2_font_color }}' }">
+                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" :style="'background-color: ' + selectedColor" wire:key="line2-color-{{ $section_4_line_2_font_color }}">
+                                <input type="color" wire:model="section_4_line_2_font_color" x-model="selectedColor" class="opacity-0 w-full h-full cursor-pointer">
                             </div>
                             <div class="flex-1">
                                 <div class="bg-gray-50 rounded-md p-2 border border-gray-200 h-10 flex items-center">
-                                    <p class="text-xs font-mono text-gray-600">{{ $section_4_line_2_font_color }}</p>
+                                    <p class="text-xs font-mono text-gray-600" x-text="selectedColor">{{ $section_4_line_2_font_color }}</p>
                                 </div>
                             </div>
                         </div>
@@ -180,26 +180,26 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Button BG Color</label>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" style="background-color: {{ $section_4_button_1_bg_color }};" wire:key="button-bg-{{ $section_4_button_1_bg_color }}">
-                                <input type="color" wire:model.live="section_4_button_1_bg_color" class="opacity-0 w-full h-full cursor-pointer">
+                        <div class="flex items-center space-x-3" x-data="{ selectedColor: '{{ $section_4_button_1_bg_color }}' }">
+                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" :style="'background-color: ' + selectedColor" wire:key="button-bg-{{ $section_4_button_1_bg_color }}">
+                                <input type="color" wire:model="section_4_button_1_bg_color" x-model="selectedColor" class="opacity-0 w-full h-full cursor-pointer">
                             </div>
                             <div class="flex-1">
                                 <div class="bg-gray-50 rounded-md p-2 border border-gray-200 h-10 flex items-center">
-                                    <p class="text-xs font-mono text-gray-600">{{ $section_4_button_1_bg_color }}</p>
+                                    <p class="text-xs font-mono text-gray-600" x-text="selectedColor">{{ $section_4_button_1_bg_color }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Text Color</label>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" style="background-color: {{ $section_4_button_1_font_color }};" wire:key="button-text-{{ $section_4_button_1_font_color }}">
-                                <input type="color" wire:model.live="section_4_button_1_font_color" class="opacity-0 w-full h-full cursor-pointer">
+                        <div class="flex items-center space-x-3" x-data="{ selectedColor: '{{ $section_4_button_1_font_color }}' }">
+                            <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200" :style="'background-color: ' + selectedColor" wire:key="button-text-{{ $section_4_button_1_font_color }}">
+                                <input type="color" wire:model="section_4_button_1_font_color" x-model="selectedColor" class="opacity-0 w-full h-full cursor-pointer">
                             </div>
                             <div class="flex-1">
                                 <div class="bg-gray-50 rounded-md p-2 border border-gray-200 h-10 flex items-center">
-                                    <p class="text-xs font-mono text-gray-600">{{ $section_4_button_1_font_color }}</p>
+                                    <p class="text-xs font-mono text-gray-600" x-text="selectedColor">{{ $section_4_button_1_font_color }}</p>
                                 </div>
                             </div>
                         </div>

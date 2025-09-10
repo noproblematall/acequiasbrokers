@@ -13,24 +13,25 @@
         </div>
 
         <div class="space-y-4">
-            <div>
+            <div x-data="{ selectedColor: '{{ $landing_bg_color }}' }">
                 <label class="block text-sm font-medium text-gray-700 mb-3">
                     Background Color
                 </label>
                 <div class="flex items-center space-x-4">
                     <div class="relative group">
                         <div class="w-10 h-10 rounded-lg border-2 border-gray-300 shadow-sm overflow-hidden cursor-pointer hover:border-gray-400 transition-all duration-200"
-                            style="background-color: {{ $landing_bg_color }};" wire:key="landing-bg-{{ $landing_bg_color }}">
+                            :style="'background-color: ' + selectedColor" wire:key="landing-bg-{{ $landing_bg_color }}">
                             <input
                                 type="color"
-                                wire:model.live="landing_bg_color"
+                                wire:model="landing_bg_color"
+                                x-model="selectedColor"
                                 class="opacity-0 w-full h-full cursor-pointer"
                                 title="Select background color">
                         </div>
                     </div>
                     <div class="flex-1">
                         <div class="bg-gray-50 rounded-lg p-3 border border-gray-200 h-10 flex items-center">
-                            <p class="text-sm font-medium text-gray-700">Selected Color: <span class="font-mono text-sm text-gray-600">{{ $landing_bg_color }}</span></p>
+                            <p class="text-sm font-medium text-gray-700">Selected Color: <span class="font-mono text-sm text-gray-600" x-text="selectedColor">{{ $landing_bg_color }}</span></p>
                         </div>
                     </div>
                 </div>
