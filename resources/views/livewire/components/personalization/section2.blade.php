@@ -49,6 +49,17 @@
                     placeholder="Enter paragraph 3 text"></textarea>
             </div>
 
+            <!-- Image Url -->
+            <div class="lg:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-3">
+                    Image Url
+                </label>
+                <input
+                    type="text"
+                    wire:model="section_2_image_url"
+                    class="w-full rounded-lg border border-gray-300 px-4 h-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+            </div>
+
             <!-- Button Link -->
             <div class="lg:col-span-2">
                 <label class="block text-sm font-medium text-gray-700 mb-3">

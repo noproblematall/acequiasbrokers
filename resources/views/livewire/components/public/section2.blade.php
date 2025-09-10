@@ -5,9 +5,13 @@
                 <!-- Logo Section (1 part width) -->
                 <div>
                     <div class="flex justify-center items-center h-full">
-                        <svg class="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                        </svg>
+                        @if($section_2_image_url)
+                            <img src="{{ $section_2_image_url }}" alt="Logo" class="w-20 h-20 object-cover rounded-full">
+                        @else
+                            <svg class="w-20 h-20 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                        @endif
                     </div>
                 </div>
                 
@@ -40,7 +44,7 @@
                                 @if($section_2_button_1_icon_link)
                                     <img src="{{ $section_2_button_1_icon_link }}" alt="Icon" class="w-5 h-5 mr-2">
                                 @endif
-                                Hagamos realidad tu plan
+                                {{ $section_2_button_1_text }}
                             </a>
                         </div>
                     @endif

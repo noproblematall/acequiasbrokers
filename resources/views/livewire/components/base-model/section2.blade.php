@@ -263,6 +263,12 @@
                     <input type="url" wire:model="section_2_button_1_icon_link" class="w-full rounded-lg border border-gray-300 px-4 h-10 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" placeholder="https://example.com/icon-link" title="Enter icon link URL">
                 </div>
 
+                <!-- Button text -->
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Button Text</label>
+                    <input type="text" wire:model="section_2_button_1_text" class="w-full rounded-lg border border-gray-300 px-4 h-10 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" >
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-4">
                     <!-- Text Color -->
                     <div>

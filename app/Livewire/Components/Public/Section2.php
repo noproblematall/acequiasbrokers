@@ -16,6 +16,7 @@ class Section2 extends Component
     public $section_2_line_2;
     public $section_2_paragraph_3;
     public $section_2_button_link;
+    public $section_2_image_url;
     
     // Line 1 styling
     public $section_2_line_1_font_name;
@@ -46,6 +47,7 @@ class Section2 extends Component
     public $section_2_button_1_font_color;
     public $section_2_button_1_text_alignment;
     public $section_2_button_1_icon_link;
+    public $section_2_button_1_text;
 
     public function mount($broker = null)
     {
@@ -80,6 +82,7 @@ class Section2 extends Component
         $this->section_2_button_1_font_color = BaseModel::getOptionValue('section_2_button_1_font_color', '#ffffff');
         $this->section_2_button_1_text_alignment = BaseModel::getOptionValue('section_2_button_1_text_alignment', 'center');
         $this->section_2_button_1_icon_link = BaseModel::getOptionValue('section_2_button_1_icon_link');
+        $this->section_2_button_1_text = BaseModel::getOptionValue('section_2_button_1_text');
         
         // Override with broker personalization if exists
         if ($this->broker) {
@@ -88,6 +91,7 @@ class Section2 extends Component
                 $this->section_2_line_1 = $personalization->section_2_line_1 ?: $this->section_2_line_1;
                 $this->section_2_line_2 = $personalization->section_2_line_2 ?: $this->section_2_line_2;
                 $this->section_2_paragraph_3 = $personalization->section_2_paragraph_3 ?: $this->section_2_paragraph_3;
+                $this->section_2_image_url = $personalization->section_2_image_url ?: $this->section_2_image_url;
                 $this->section_2_button_link = $personalization->section_2_button_link ?: $this->section_2_button_link;
             }
         }
