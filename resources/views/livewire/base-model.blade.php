@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto space-y-8">
+<div class="w-full max-w-full mx-auto space-y-8">
     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
         <div class="flex items-center space-x-4">
             <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">

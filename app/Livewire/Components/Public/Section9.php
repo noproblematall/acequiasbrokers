@@ -45,7 +45,11 @@ class Section9 extends Component
 
     public function mount($broker = null)
     {
-        $this->broker = $broker;
+        if (!$broker) {
+            $this->broker = Broker::first();
+        } else {
+            $this->broker = is_numeric($broker) ? Broker::find($broker) : $broker;
+        }
         
         // Load base model values
         $this->section_9_is_disabled = (bool) BaseModel::getOptionValue('section_9_is_disabled', 0);

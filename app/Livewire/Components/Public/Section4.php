@@ -43,7 +43,11 @@ class Section4 extends Component
 
     public function mount($broker = null)
     {
-        $this->broker = $broker;
+        if (!$broker) {
+            $this->broker = Broker::first();
+        } else {
+            $this->broker = is_numeric($broker) ? Broker::find($broker) : $broker;
+        }
         
         $this->section_4_bg_color = BaseModel::getOptionValue('section_4_bg_color', '#63666a');
         $this->section_4_is_disabled = BaseModel::getOptionValue('section_4_is_disabled', false);
