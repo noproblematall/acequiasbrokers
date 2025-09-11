@@ -32,7 +32,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section2 />
+                <livewire:components.public.section2 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section4 />
+                <livewire:components.public.section4 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section5 />
+                <livewire:components.public.section5 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section6 />
+                <livewire:components.public.section6 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section7 />
+                <livewire:components.public.section7 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section9 />
+                <livewire:components.public.section9 :broker="$broker" />
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@
         </div>
         <div class="w-full max-w-md bg-gray-50 rounded-xl flex items-center">
             <div class="w-full border border-gray-200 rounded p-2">
-                <livewire:components.public.section10 />
+                <livewire:components.public.section10 :broker="$broker" />
             </div>
         </div>
     </div>
